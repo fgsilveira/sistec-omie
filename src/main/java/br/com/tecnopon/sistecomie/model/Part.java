@@ -9,9 +9,10 @@ import javax.persistence.Id;
 
 @EqualsAndHashCode
 @Entity
-public class Brand {
+public class Part {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
