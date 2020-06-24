@@ -14,6 +14,7 @@ public class Customer {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String employerIdentificationNumber;
 
     public Long getId() {
         return id;
@@ -29,5 +30,21 @@ public class Customer {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmployerIdentificationNumber() {
+        return employerIdentificationNumber;
+    }
+
+    public void setEmployerIdentificationNumber(String employerIdentificationNumber) {
+        this.employerIdentificationNumber = employerIdentificationNumber;
+    }
+
+    public Customer() {
+
+    }
+
+    public Customer(String employerIdentificationNumber) {
+        this.employerIdentificationNumber = employerIdentificationNumber;
     }
 }
