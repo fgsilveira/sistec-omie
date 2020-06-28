@@ -29,13 +29,19 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-        .antMatchers(HttpMethod.GET,"/repairs").permitAll()
-        .antMatchers(HttpMethod.GET, "/repairs/*").permitAll()
+        http.csrf().disable()
+        .authorizeRequests()
+        //.antMatchers(HttpMethod.GET,"/repairs").permitAll()
+        //.antMatchers(HttpMethod.GET, "/repairs/*").permitAll()
+        //.antMatchers(HttpMethod.GET,"/customers").permitAll()
+        //.antMatchers(HttpMethod.GET,"/customers/*").permitAll()
+        .antMatchers("/customers").permitAll()
+        .antMatchers("/customers/*").permitAll()
         .antMatchers("/h2-console/**").permitAll()
         .anyRequest().authenticated()
         .and().formLogin()
-        .and().csrf().ignoringAntMatchers("/h2-console/**")
+        //.and().csrf().ignoringAntMatchers("/h2-console/**")
+          //      .and.csrf().ignoringAntMatchers("/customers")
         .and().headers().frameOptions().sameOrigin();
     }
 
