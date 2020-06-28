@@ -17,7 +17,7 @@ public class RepairDto {
 
     public RepairDto(Repair repair) {
         this.id = repair.getId();
-        this.customer = repair.getCustomer().getName();
+        this.customer = repair.getCustomer().getCompanyName();
         this.product = repair.getProduct().getName();
         this.employee = repair.getEmployee().getName();
         this.dateOfCreation = repair.getDateOfCreation();
