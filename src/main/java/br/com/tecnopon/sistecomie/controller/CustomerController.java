@@ -4,6 +4,7 @@ import br.com.tecnopon.sistecomie.controller.dto.CustomerDto;
 import br.com.tecnopon.sistecomie.controller.form.CustomerForm;
 import br.com.tecnopon.sistecomie.model.Customer;
 import br.com.tecnopon.sistecomie.repository.CustomerRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,8 @@ import java.util.List;
 @RequestMapping("/customers")
 public class CustomerController {
 
-    private final CustomerRepository customerRepository;
+
+    private CustomerRepository customerRepository;
 
     @Autowired
     public CustomerController(CustomerRepository customerRepository) {

@@ -1,7 +1,6 @@
 package br.com.tecnopon.sistecomie.controller.dto;
 
 import br.com.tecnopon.sistecomie.model.Customer;
-import br.com.tecnopon.sistecomie.model.Repair;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,7 +12,7 @@ public class CustomerDto {
 
     public CustomerDto(Customer customer) {
         this.id = customer.getId();
-        this.name = customer.getName();
+        this.name = customer.getTradeName();
     }
 
     public Long getId() {

@@ -13,8 +13,19 @@ public class Customer {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
     private String employerIdentificationNumber;
+    private String tradeName;
+    private String companyName;
+
+    public Customer() {
+
+    }
+
+    public Customer(String employerIdentificationNumber, String tradeName, String companyName) {
+        this.employerIdentificationNumber = employerIdentificationNumber;
+        this.tradeName = tradeName;
+        this.companyName = companyName;
+    }
 
     public Long getId() {
         return id;
@@ -22,14 +33,6 @@ public class Customer {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getEmployerIdentificationNumber() {
@@ -40,11 +43,20 @@ public class Customer {
         this.employerIdentificationNumber = employerIdentificationNumber;
     }
 
-    public Customer() {
-
+    public String getTradeName() {
+        return tradeName;
     }
 
-    public Customer(String employerIdentificationNumber) {
-        this.employerIdentificationNumber = employerIdentificationNumber;
+    public void setTradeName(String tradeName) {
+        this.tradeName = tradeName;
     }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
 }
